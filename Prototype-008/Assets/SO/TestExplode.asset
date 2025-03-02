@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: TestExplode
   m_EditorClassIdentifier: 
   Radius: 10
-  Pressure: 15
+  Pressure: 30
