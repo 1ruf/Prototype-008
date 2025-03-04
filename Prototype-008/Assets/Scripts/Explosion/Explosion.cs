@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExplosionManager : MonoBehaviour
+public class Explosion : MonoBehaviour
 {
     [SerializeField] private GameObject _explosionLight;
     [SerializeField] private ParticleSystem _explosionParticle;

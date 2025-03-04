@@ -8,8 +8,8 @@ public class ExplosionExcuter : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            ExplosionManager explosionManager;
-            if (!targetGameobject.TryGetComponent<ExplosionManager>(out explosionManager))
+            Explosion explosionManager;
+            if (!targetGameobject.TryGetComponent<Explosion>(out explosionManager))
             {
                 print("target has no ExplosionManager!");
                 return;
