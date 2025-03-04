@@ -21,6 +21,7 @@ public class Explosion : MonoBehaviour
         Collider[] effectableObj = Physics.OverlapSphere(_ePoint, _radius);
 
         EfterEffect(effectableObj);
+        AudioEffect();
     }
 
     private void EfterEffect(Collider[] Objs)
@@ -41,6 +42,14 @@ public class Explosion : MonoBehaviour
             else print($"{obj.name} has no rigidbody!");
         }
         StartCoroutine(DestroyCoroutine(_explosionLight,0.1f));
+    }
+
+    private void AudioEffect()
+    {
+        print(valueSO.ExplosionAudio.name);
+        print(transform.position);
+        print(GameManager.Instance.SoundManager);
+        GameManager.Instance.SoundManager.PlayAudio(valueSO.ExplosionAudio,transform.position);
     }
 
     private void VisualEffect()

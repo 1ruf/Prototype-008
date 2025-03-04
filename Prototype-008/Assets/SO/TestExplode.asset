@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Radius: 10
   Pressure: 30
+  ExplosionAudio: {fileID: 8300000, guid: fde69346a1cd9da4794586c0fc0f65ba, type: 3}
