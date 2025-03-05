@@ -26,7 +26,7 @@ public class SoundManager : MonoBehaviour
         time = CalculateTime(playLocation, _listeningPlayer.position);
 
         StartCoroutine(AudioDelay(time,targetAS));
-        StartCoroutine(AudioDestroy(targetAS));
+        StartCoroutine(AudioDestroy(time + targetAS.clip.length,targetAS));
     }
 
     private float CalculateTime(Vector3 playLocation, Vector3 listenLocation)
@@ -42,9 +42,9 @@ public class SoundManager : MonoBehaviour
         yield return new WaitForSeconds(time);
         source.Play();
     }
-    private IEnumerator AudioDestroy(AudioSource source)
+    private IEnumerator AudioDestroy(float time, AudioSource source)
     {
-        yield return new WaitForSeconds(source.clip.length);
+        yield return new WaitForSeconds(time);
         Destroy(source.gameObject);
     }
 }

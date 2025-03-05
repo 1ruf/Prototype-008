@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c0b6382a4428a349a74b3042b705d07, type: 3}
   m_Name: TestExplode
   m_EditorClassIdentifier: 
-  Radius: 10
-  Pressure: 30
+  Radius: 20
+  Pressure: 40
   ExplosionAudio: {fileID: 8300000, guid: fde69346a1cd9da4794586c0fc0f65ba, type: 3}

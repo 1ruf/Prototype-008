@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Explosion : MonoBehaviour
+public class Explosion : MonoBehaviour, ITouchable
 {
     [SerializeField] private GameObject _explosionLight;
     [SerializeField] private ParticleSystem _explosionParticle;
@@ -46,9 +46,6 @@ public class Explosion : MonoBehaviour
 
     private void AudioEffect()
     {
-        print(valueSO.ExplosionAudio.name);
-        print(transform.position);
-        print(GameManager.Instance.SoundManager);
         GameManager.Instance.SoundManager.PlayAudio(valueSO.ExplosionAudio,transform.position);
     }
 
@@ -68,5 +65,10 @@ public class Explosion : MonoBehaviour
     {
         Gizmos.DrawWireSphere(_ePoint, _radius);
         Gizmos.color = Color.red;
+    }
+
+    public void Touched()
+    {
+        Explode(transform.position);
     }
 }
